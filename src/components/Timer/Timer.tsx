@@ -23,6 +23,13 @@ function Timer({ timerSettings }: Props) {
   const [isOnBreak, setIsOnBreak] = useState(false);
   const [currentState, setCurrentState] = useState(Types.FOCUS);
   console.log(currentState);
+
+  function playAlert() {
+    console.log("play");
+    var audio = new Audio("../../../audios/alert.mp3");
+    audio.play();
+  }
+
   useEffect(() => {
     setTimer(timerSettings.defaultTimer);
   }, [timerSettings]);
@@ -74,6 +81,7 @@ function Timer({ timerSettings }: Props) {
   return (
     <div id="timer">
       <div className="timer_container">
+        <button onClick={() => playAlert()}>play</button>
         {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
         <div className="buttons_container">
           <button onClick={startTimer}>Start</button>

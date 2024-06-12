@@ -6,7 +6,6 @@ interface Props {
   longBreak: number;
 }
 
-class Po
 
 export default Pomodoro;
 

@@ -18,8 +18,8 @@ interface Props {
 }
 
 enum SettingsConfigured {
-  BACKGROUND = "Background",
-  POMODORO = "Pomodoro",
+  BACKGROUND = "Theme",
+  POMODORO = "Focus Timer",
 }
 
 function Settings({

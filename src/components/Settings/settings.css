@@ -28,7 +28,7 @@
 }
 
 .setting_option{
-  background-color: grey;
+  cursor: pointer;
   border-radius: 10px;
   padding-block: 8px;
   

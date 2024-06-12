@@ -24,10 +24,12 @@ function PomodoroSettings({ timerSettings, updateTimerSettings }: Props) {
 
   const handleChange = (e: any) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value * 60,
-    });
+    if (value > 0 && value < 61) {
+      setFormData({
+        ...formData,
+        [name]: value * 60,
+      });
+    }
   };
 
   function handleClick() {
@@ -36,36 +38,39 @@ function PomodoroSettings({ timerSettings, updateTimerSettings }: Props) {
 
   return (
     <div className="chooseTime">
-      <div className="inputs_container">
-        <div className="input_container">
-          <label>Time </label>
-          <input
-            type="number"
-            name="defaultTimer"
-            placeholder="time"
-            value={formData.defaultTimer / 60}
-            onChange={handleChange}
-          ></input>
-        </div>
-        <div className="input_container">
-          <label>Short Break </label>
-          <input
-            type="number"
-            name="shortBreak"
-            value={formData.shortBreak / 60}
-            placeholder="Short Break"
-            onChange={handleChange}
-          ></input>
-        </div>
-        <div className="input_container">
-          <label>Long Break </label>
-          <input
-            type="number"
-            name="longBreak"
-            value={formData.longBreak / 60}
-            placeholder="Long Break"
-            onChange={handleChange}
-          ></input>
+      <div className="time_container">
+        <div className="inputs_title">Time Settings</div>
+        <div className="inputs_container">
+          <div className="input_container">
+            <label>Pomodoro </label>
+            <input
+              type="number"
+              name="defaultTimer"
+              placeholder="time"
+              value={formData.defaultTimer / 60}
+              onChange={handleChange}
+            ></input>
+          </div>
+          <div className="input_container">
+            <label>Short Break </label>
+            <input
+              type="number"
+              name="shortBreak"
+              value={formData.shortBreak / 60}
+              placeholder="Short Break"
+              onChange={handleChange}
+            ></input>
+          </div>
+          <div className="input_container">
+            <label>Long Break </label>
+            <input
+              type="number"
+              name="longBreak"
+              value={formData.longBreak / 60}
+              placeholder="Long Break"
+              onChange={handleChange}
+            ></input>
+          </div>
         </div>
       </div>
       <button className="save_btn" onClick={handleClick}>

@@ -16,11 +16,18 @@ input[type="number"] {
     row-gap: 40px;
     margin: auto;
   }
-  
-  .chooseTime input{
-    width: 50px;
-    height: 40px;
+
+  .time_container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
+
+  .inputs_title{
+    font-size: 30px;
+  }
+
 
   .inputs_container{
     display: flex;
@@ -32,6 +39,19 @@ input[type="number"] {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap:10px;
+  }
+
+  .input_container label{
+    width: 100%;
+    text-align: left;
+  }
+
+  .input_container input{
+    background-color: transparent;
+    color:white;
+    width: 100px;
+    font-size: 20px;
   }
 
   .save_btn{
