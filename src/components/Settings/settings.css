@@ -1,0 +1,61 @@
+.setting_nav{
+  background-color: rgb(26, 25, 25);
+  position: fixed;
+  z-index: 10;
+  left:40%;
+  right: 0;
+  top:0;
+  bottom: 0;
+  display: grid;
+  grid-template-rows: 50px auto;
+}
+
+.settings_container{
+  display: grid;
+  grid-template-columns: 30% auto;
+  height: 100%;
+  
+}
+
+.settings_container_options{
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  border-right: 1px solid  white;
+  height: 100%;
+  padding-inline: 30px;
+  padding-top: 20px;
+}
+
+.setting_option{
+  background-color: grey;
+  border-radius: 10px;
+  padding-block: 8px;
+  
+}
+
+.setting_option:hover{
+  background-color: rgba(167, 160, 160, 0.4);
+}
+
+
+
+
+.btn_close{
+  display: flex;
+  justify-content: start;
+  padding: 20px;
+}
+
+.btn_close i{
+  cursor: pointer;
+}
+
+
+
+.show_settings_container{
+  width: 90%;
+  height: 95%;
+  margin: auto;
+  
+}

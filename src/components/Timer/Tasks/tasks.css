@@ -1,0 +1,36 @@
+.popup{
+    z-index: 1000;
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom: 0;
+    
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup_container{
+    width: 50%;
+    height: 70%;
+    border-radius: 15px;
+    background-color: red;
+}
+
+.popup_close{
+    width: 98%;
+    height: 40px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.popup_close i{
+    cursor: pointer;
+}
+
+.tasks_container{
+    background-color: green;
+}
