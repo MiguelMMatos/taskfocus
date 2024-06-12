@@ -1,6 +1,6 @@
 import "./background.css";
 import Image from "./Image/Image";
-import ImagesConfig from "../../../config.js";
+import ImagesConfig from "../../../config.ts";
 
 interface Props {
   changeBackground: (newKey: string, newBackground: string) => void;

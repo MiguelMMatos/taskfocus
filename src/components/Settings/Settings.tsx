@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./settings.css";
 import PomodoroSettings from "./PomodoroSettings/PomodoroSettings";
 import Background from "./Background/Background";
+import { TTimer } from "../../App";
 
 interface Props {
   timerSettings: {
@@ -12,7 +13,7 @@ interface Props {
   };
   backgroundSelected: string;
   handleClickCloseSettings: () => void;
-  updateTimerSettings: (values: {}) => void;
+  updateTimerSettings: (values: TTimer) => void;
   changeBackground: (newKey: string, newBackground: string) => void;
 }
 

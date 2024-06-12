@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./pomodoroSettings.css";
+import { TTimer } from "../../../App";
 
 interface Props {
   timerSettings: {
@@ -8,17 +9,20 @@ interface Props {
     longBreak: number;
     pomodoroCycleMax: number;
   };
-  updateTimerSettings: (values: {}) => void;
+  updateTimerSettings: (values: TTimer) => void;
 }
 
 function PomodoroSettings({ timerSettings, updateTimerSettings }: Props) {
-  const [formData, setFormData] = useState({
+  const defaultValues: TTimer = {
     defaultTimer: timerSettings.defaultTimer,
     shortBreak: timerSettings.shortBreak,
     longBreak: timerSettings.longBreak,
-  });
+    pomodoroCycleMax: timerSettings.pomodoroCycleMax,
+  };
 
-  const handleChange = (e) => {
+  const [formData, setFormData] = useState(defaultValues);
+
+  const handleChange = (e: any) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,

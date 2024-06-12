@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./task.css";
 
 interface Props {
@@ -11,16 +11,13 @@ interface Props {
 function Task({ task }: Props) {
   const [name, setName] = useState(task.name);
 
-  function handleChange(e) {
+  function handleChange(e: any) {
     setName(e.target.value);
   }
 
   return (
     <div className="task_container">
-      <input
-        type="checkbox"
-        checked={task.done ? "checked" : "unchecked"}
-      ></input>
+      <input type="checkbox"></input>
       <input type="text" value={name} onChange={handleChange}></input>
     </div>
   );

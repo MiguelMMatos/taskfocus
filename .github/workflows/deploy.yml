@@ -21,8 +21,6 @@ jobs:
         uses: bahmutov/npm-install@v1
 
       - name: Build project
-        env:
-          CI: false # Set the CI environment variable to false
         run: npm run build
 
       - name: Upload production-ready build files

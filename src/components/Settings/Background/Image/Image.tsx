@@ -1,4 +1,3 @@
-import React from "react";
 import "./image.css";
 
 interface Props {

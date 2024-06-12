@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./timer.css";
-import Tasks from "./Tasks/Tasks";
 
 enum Types {
   FOCUS = "Focus",
@@ -23,7 +22,7 @@ function Timer({ timerSettings }: Props) {
   const [pomodoroCycleCount, setPomodoroCycleCount] = useState(0);
   const [isOnBreak, setIsOnBreak] = useState(false);
   const [currentState, setCurrentState] = useState(Types.FOCUS);
-
+  console.log(currentState);
   useEffect(() => {
     setTimer(timerSettings.defaultTimer);
   }, [timerSettings]);
@@ -61,10 +60,12 @@ function Timer({ timerSettings }: Props) {
         setTimer((timer) => timer - 1);
       }, 1000);
     } else if (timer === 0) {
-      clearInterval(interval);
+      if (interval) clearInterval(interval);
       checkCycle();
     }
-    return () => clearInterval(interval);
+    return () => {
+      if (interval) clearInterval(interval);
+    };
   }, [isActive, timer]);
 
   const minutes = Math.floor(timer / 60);
