@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Timer from "./components/Timer/Timer";
 import Settings from "./components/Settings/Settings";
-import ImagesConfig from "./config.js";
+import { ImagesConfig } from "./config.js";
 import Tasks from "./components/Timer/Tasks/Tasks.js";
 
 function App() {
