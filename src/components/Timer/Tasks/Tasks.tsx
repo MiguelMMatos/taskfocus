@@ -22,6 +22,12 @@ function Tasks() {
     setTasks(newTasks);
   }
 
+  function deleteTask(index: number) {
+    const newTasks = [...tasks];
+    newTasks.splice(index, 1);
+    setTasks(newTasks);
+  }
+
   function handleClick() {
     const newTasks = [...tasks];
     newTasks.push({
@@ -75,6 +81,7 @@ function Tasks() {
                   task={task}
                   taskIndex={taskIndex}
                   changeTask={changeTask}
+                  deleteTask={deleteTask}
                 ></Task>
               ))}
             </div>
