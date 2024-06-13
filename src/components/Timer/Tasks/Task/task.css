@@ -1,4 +1,19 @@
+.task_container {
+  display: flex;
+  justify-content: center;
+}
 
-.task_container{
-    display: flex;
+.task_checked {
+  width: 20px;
+}
+
+.task_name {
+  padding-block: 10px;
+  background-color: transparent;
+  border: 0;
+  width: 70%;
+  text-align: left;
+  margin-inline: 10px;
+  font-size: 20px;
+  text-decoration: line-through;
 }

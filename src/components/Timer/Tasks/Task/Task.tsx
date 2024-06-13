@@ -1,24 +1,39 @@
 import { useState } from "react";
 import "./task.css";
+import { TTask } from "../Tasks";
 
 interface Props {
-  task: {
-    done: boolean;
-    name: string;
-  };
+  task: TTask;
+  taskIndex: number;
+  changeTask: (task: TTask, index: number) => void;
 }
 
-function Task({ task }: Props) {
-  const [name, setName] = useState(task.name);
+function Task({ task, taskIndex, changeTask }: Props) {
+  function handleChangeInput(e: React.ChangeEvent<HTMLInputElement>) {
+    task.name = e.target.value;
+    changeTask(task, taskIndex);
+  }
 
-  function handleChange(e: any) {
-    setName(e.target.value);
+  function handleChangeCheckbox(e: React.ChangeEvent<HTMLInputElement>) {
+    task.done = !task.done;
+    changeTask(task, taskIndex);
   }
 
   return (
     <div className="task_container">
-      <input type="checkbox"></input>
-      <input type="text" value={name} onChange={handleChange}></input>
+      <input
+        className="task_checked"
+        type="checkbox"
+        checked={task.done}
+        onChange={handleChangeCheckbox}
+      ></input>
+      <input
+        className="task_name"
+        type="text"
+        value={task.name}
+        onChange={handleChangeInput}
+        style={{ textDecoration: task.done ? "line-through" : "none" }}
+      ></input>
     </div>
   );
 }

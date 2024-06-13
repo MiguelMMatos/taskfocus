@@ -1,36 +1,80 @@
-.popup{
-    z-index: 1000;
-    position: fixed;
-    top:0;
-    left:0;
-    right:0;
-    bottom: 0;
-    
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.popup {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.popup_container{
-    width: 50%;
-    height: 70%;
-    border-radius: 15px;
-    background-color: red;
+.popup_container {
+  width: 30rem;
+  height: 50%;
+  border-radius: 15px;
+  background-color: #282828;
+
+  position: relative;
 }
 
-.popup_close{
-    width: 98%;
-    height: 40px;
-    display: flex;
-    justify-content: end;
-    align-items: center;
+.popup_add_task {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 10px;
+  padding: 0;
+  font-size: 30px;
+  padding-block: 5px;
+  background: #171717;
+  border: 3px transparent solid;
+  transform: translate(0px, 55px);
 }
 
-.popup_close i{
-    cursor: pointer;
+.popup_title {
+  font-size: 30px;
 }
 
-.tasks_container{
-    background-color: green;
+.popup_add_task:hover {
+  border: 3px white solid;
+}
+
+.task_done {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.task_icon {
+  display: flex;
+  align-items: center;
+}
+
+.current_task {
+  cursor: pointer;
+}
+
+.task_icon g:hover {
+  opacity: 0.7;
+}
+
+.popup_close {
+  width: 98%;
+  height: 40px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.popup_close i {
+  cursor: pointer;
+}
+
+.tasks_container {
+  margin-top: 30px;
 }
