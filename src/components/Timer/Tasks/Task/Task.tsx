@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./task.css";
 import { TTask } from "../Tasks";
 
@@ -14,7 +13,7 @@ function Task({ task, taskIndex, changeTask }: Props) {
     changeTask(task, taskIndex);
   }
 
-  function handleChangeCheckbox(e: React.ChangeEvent<HTMLInputElement>) {
+  function handleChangeCheckbox() {
     task.done = !task.done;
     changeTask(task, taskIndex);
   }
@@ -25,7 +24,7 @@ function Task({ task, taskIndex, changeTask }: Props) {
         className="task_checked"
         type="checkbox"
         checked={task.done}
-        onChange={handleChangeCheckbox}
+        onChange={() => handleChangeCheckbox()}
       ></input>
       <input
         className="task_name"
