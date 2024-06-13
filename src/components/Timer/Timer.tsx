@@ -92,7 +92,7 @@ function Timer({ timerSettings }: Props) {
       <div className="timer_container">
         {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
         <div className="buttons_container">
-          <button onClick={startTimer}>Startsss</button>
+          <button onClick={startTimer}>Start</button>
           <button onClick={stopTimer}>Stop</button>
           <div className="btn_restart" onClick={resetTimer}>
             <svg
