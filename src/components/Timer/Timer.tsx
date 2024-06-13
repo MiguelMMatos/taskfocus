@@ -81,6 +81,7 @@ function Timer({ timerSettings }: Props) {
     return () => {
       if (interval) clearInterval(interval);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isActive, timer]);
 
   const minutes = Math.floor(timer / 60);
@@ -91,7 +92,7 @@ function Timer({ timerSettings }: Props) {
       <div className="timer_container">
         {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
         <div className="buttons_container">
-          <button onClick={startTimer}>Start</button>
+          <button onClick={startTimer}>Startt</button>
           <button onClick={stopTimer}>Stop</button>
           <div className="btn_restart" onClick={resetTimer}>
             <svg
