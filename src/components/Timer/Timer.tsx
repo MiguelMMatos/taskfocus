@@ -22,13 +22,17 @@ function Timer({ timerSettings }: Props) {
   const [pomodoroCycleCount, setPomodoroCycleCount] = useState(0);
   const [isOnBreak, setIsOnBreak] = useState(false);
   const [currentState, setCurrentState] = useState(Types.FOCUS);
-  console.log(currentState);
 
   function playAlert() {
-    console.log("play");
-    var audio = new Audio("../../../audios/alert.mp3");
+    const audio = new Audio(
+      "https://www.zapsplat.com/wp-content/uploads/2015/sound-effects-35448/zapsplat_multimedia_alert_warm_piano_pads_001_39465.mp3"
+    );
     audio.play();
   }
+
+  useEffect(() => {
+    playAlert();
+  }, [currentState]);
 
   useEffect(() => {
     setTimer(timerSettings.defaultTimer);
@@ -36,6 +40,10 @@ function Timer({ timerSettings }: Props) {
 
   const startTimer = () => {
     setIsActive(true);
+  };
+
+  const stopTimer = () => {
+    setIsActive(false);
   };
 
   const resetTimer = () => {
@@ -81,11 +89,29 @@ function Timer({ timerSettings }: Props) {
   return (
     <div id="timer">
       <div className="timer_container">
-        <button onClick={() => playAlert()}>play</button>
         {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
         <div className="buttons_container">
           <button onClick={startTimer}>Start</button>
-          <button onClick={resetTimer}>Restart</button>
+          <button onClick={stopTimer}>Stop</button>
+          <div className="btn_restart" onClick={resetTimer}>
+            <svg
+              className="w-6 h-6 text-gray-800 dark:text-white svg_restart"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="70"
+              height="70"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17.651 7.65a7.131 7.131 0 0 0-12.68 3.15M18.001 4v4h-4m-7.652 8.35a7.13 7.13 0 0 0 12.68-3.15M6 20v-4h4"
+              />
+            </svg>
+          </div>
         </div>
       </div>
     </div>

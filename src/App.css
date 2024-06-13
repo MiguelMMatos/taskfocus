@@ -6,29 +6,28 @@
   height: 100vh;
 }
 
-body{
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.app_container{
+.app_container {
   width: 100%;
   height: 100%;
   position: relative;
   background-image: url("../background/3.jpg");
-  background-color: #242424;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.main_container{
+.main_container {
   width: 100%;
   height: 100%;
 }
 
-.center{
+.center {
   width: 100%;
   height: 100%;
   display: flex;
@@ -37,10 +36,9 @@ body{
   align-items: center;
 }
 
-.setting_btn{
+.setting_btn {
   cursor: pointer;
   position: absolute;
-  top:3%;
+  top: 3%;
   right: 1%;
 }
-
