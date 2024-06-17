@@ -78,6 +78,7 @@ function Timer({ timerSettings }: Props) {
       if (interval) clearInterval(interval);
       checkCycle();
     }
+
     return () => {
       if (interval) clearInterval(interval);
     };
@@ -86,6 +87,12 @@ function Timer({ timerSettings }: Props) {
 
   const minutes = Math.floor(timer / 60);
   const seconds = timer % 60;
+
+  document.title = (
+    minutes +
+    ":" +
+    (seconds < 10 ? `0${seconds}` : seconds)
+  ).toString();
 
   return (
     <div id="timer">
